@@ -19,7 +19,7 @@ Modify the threshold based on your environment.
 
 
 
-### 👤 2. Multiple Failed Login Attempts for the Same User
+###👤 2. Multiple Failed Login Attempts for the Same User
 
 index=windows  eventCode=4625
 | stats count by user
@@ -27,7 +27,7 @@ index=windows  eventCode=4625
 
 
 
-### 📆 3. Failed Login Attempts Over Time
+###📆 3. Failed Login Attempts Over Time
 
 index=windows EventCode=4625
 | timechart span=5m count by src_ip
@@ -36,7 +36,7 @@ index=windows EventCode=4625
 Purpose: Monitor failed login attempts over time by source IP.
 
 
-### 🧠 4. Failed Login Attempts by User, Workstation, and IP
+###🧠 4. Failed Login Attempts by User, Workstation, and IP
 
 index=windows EventCode=4625
 | stats count by user, WorkstationName, src_ip
@@ -46,7 +46,7 @@ Purpose: Track failed login attempts per user, workstation, and IP address.
 
 
 
-### 🧪 5. Failed Logins Followed by Successful Logins (Possible Brute Force Success)
+###🧪 5. Failed Logins Followed by Successful Logins (Possible Brute Force Success)
 
 
 (index=windiws Eventcode=4625 or Eventcode=4624)
